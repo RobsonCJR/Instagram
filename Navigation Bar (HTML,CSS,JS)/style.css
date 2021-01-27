@@ -1,0 +1,77 @@
+*margin{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: black;
+}
+.header{
+	margin: auto;
+	width: 300px;
+	height: 180px;
+	background: rgb(10, 10, 10);
+	position: relative;
+	top: -140px;
+	align-items: center;
+	border-radius: 0 0 50px 50px;
+	transition: all 0.5s;
+}
+.header::before,.header::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 0 0 50px 50px;
+	background-image: linear-gradient(45deg, #b463ed 0, #c859df 5.56%, #d94ed0 11.11%, 
+	#e743c0 16.67%, #f139af 22.22%, #f9319e 27.78%, #fe2c8c 33.33%, #ff2c7a 38.89%, 
+	#ff3069 44.44%, #ff3858 50%, #fb4147 55.56%, #f54c36 61.11%, #ed5625 66.67%, #e45f0d 72.22%, 
+	#da6800 77.78%, #ce7100 83.33%, #c17900 88.89%, #b38000 94.44%, #a48600 100%);
+	z-index: -1;
+	transform: scale(1.02);
+	background-size: 500%;
+	animation: anim 30s linear infinite;
+}
+@keyframes anim{
+	0%, 100%{background-position: 0 0;}
+	50%{background-position: 300% 0;}
+}
+.header::after{
+	filter: blur(20px);
+}
+
+input{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%);
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+
+input::before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 20px;
+	color: #f1f1f196;
+	margin: 0 auto;
+	content: '\f0d7';
+}
+
+a{
+	padding-top: 20px;
+	color: rgb(95, 95, 95);
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	font-weight: 700;
+	font-family: Arial;
+	text-decoration: none;
+}
+a:hover{
+	color: #f1f1f196;
+	font-size: 40px;
+	transition: all 0.5s;
+}
